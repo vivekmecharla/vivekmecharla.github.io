@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Mecharla | Interactive Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafaf9; 
+            color: #1c1917;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #4f46e5;
+            position: absolute;
+            left: -8px;
+            top: 6px;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 0;
+            top: 24px;
+            bottom: -24px;
+            width: 2px;
+            background-color: #e7e5e4;
+        }
+        .tab-active {
+            background-color: #4f46e5;
+            color: #ffffff;
+        }
+        .tab-inactive {
+            background-color: #e7e5e4;
+            color: #44403c;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<!-- Chosen Palette: Warm Neutrals with Deep Indigo Accent (bg-stone-50, text-stone-900, accent-indigo-600) -->
+<!-- Application Structure Plan: A personal portfolio dashboard structured into Hero, Impact Metrics, Core Competencies (Radar Chart), AI Innovations (Interactive Tabs), and Career Timeline (Collapsible List). This structure immediately highlights high-impact metrics and AI expertise before diving into chronological history, optimizing for recruiter/hiring manager consumption and interactive exploration. -->
+<!-- Visualization & Content Choices: Skills -> Radar Chart (Chart.js) to compare multidimensional tech/leadership skills interactively. Impact -> Stat cards (HTML/CSS) for quick quantitative digestion. Innovations -> Tabbed interface (JS) to group detailed text without clutter, allowing deep dives into key projects. Timeline -> Interactive vertical list (HTML/JS) for progressive disclosure of career history. NO SVG/Mermaid used. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="font-bold text-xl text-indigo-600 tracking-tight">VM.</div>
+                <div class="hidden sm:flex space-x-8 text-sm font-medium text-stone-600">
+                    <a href="#impact" class="hover:text-indigo-600 transition-colors">Impact</a>
+                    <a href="#skills" class="hover:text-indigo-600 transition-colors">Competencies</a>
+                    <a href="#innovations" class="hover:text-indigo-600 transition-colors">AI Innovations</a>
+                    <a href="#experience" class="hover:text-indigo-600 transition-colors">Experience</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 space-y-6">
+            <div class="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-semibold tracking-wide">
+                🏆 Best Manager Award (H2 2025)
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-stone-900 leading-tight">
+                Vivek Mecharla
+            </h1>
+            <h2 class="text-xl md:text-2xl text-stone-600 font-light leading-relaxed">
+                Engineering Manager | 13 Yrs Scaling FinTech Products | AI-Assisted Full-Stack & Platform Architecture
+            </h2>
+            <p class="text-lg text-stone-500 max-w-2xl leading-relaxed">
+                Forward-thinking engineering leader bridging the gap between enterprise backend systems (Java/Spring Boot) and cutting-edge, high-velocity Full-Stack solutions powered by Generative AI. 
+            </p>
+            <div class="flex gap-4 pt-4">
+                <a href="mailto:vivekmecharla@gmail.com" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-colors shadow-md">
+                    ✉️ Contact Me
+                </a>
+                <a href="https://linkedin.com/in/vivekmecharla" target="_blank" class="px-6 py-3 bg-white border border-stone-300 hover:bg-stone-50 text-stone-700 rounded-lg font-medium transition-colors shadow-sm">
+                    🌐 LinkedIn
+                </a>
+            </div>
+        </div>
+        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-tr from-indigo-200 to-stone-200 flex items-center justify-center shadow-xl border-4 border-white flex-shrink-0 overflow-hidden">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQElrGK8_30jzw/profile-displayphoto-scale_400_400/B56Z0mdx3FH0Ak-/0/1774466835287?e=1781136000&v=beta&t=hmdTVv4y15s9I2Ucv3OTkJJ7LFg6I9LACEX57iFQlF4" alt="Vivek Mecharla" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+            <span class="text-6xl md:text-8xl">👨‍💻</span>
+        </div>
+    </header>
+
+    <section id="impact" class="bg-white py-16 border-y border-stone-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10 text-center max-w-3xl mx-auto">
+                <h3 class="text-3xl font-bold text-stone-900 mb-4">The "Multiplier" Impact</h3>
+                <p class="text-stone-600">
+                    This section highlights the quantifiable business and operational impacts achieved through strategic engineering leadership and applied AI. It demonstrates a consistent track record of reducing overhead, accelerating delivery, and optimizing system performance.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-stone-50 p-6 rounded-xl border border-stone-100 shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="text-4xl mb-2">⏱️</div>
+                    <div class="text-3xl font-bold text-indigo-600 mb-1">90%</div>
+                    <div class="text-sm text-stone-500 font-medium">Reduction in Manual Review Time via GenAI</div>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-xl border border-stone-100 shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="text-4xl mb-2">💻</div>
+                    <div class="text-3xl font-bold text-indigo-600 mb-1">18,000+</div>
+                    <div class="text-sm text-stone-500 font-medium">Lines of Full-Stack Code Shipped in &lt;50 Hours (AI Assist)</div>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-xl border border-stone-100 shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="text-4xl mb-2">⚡</div>
+                    <div class="text-3xl font-bold text-indigo-600 mb-1">15%</div>
+                    <div class="text-sm text-stone-500 font-medium">Processing Time Saved via Fraud Engine</div>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-xl border border-stone-100 shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="text-4xl mb-2">📉</div>
+                    <div class="text-3xl font-bold text-indigo-600 mb-1">5-7 Hrs</div>
+                    <div class="text-sm text-stone-500 font-medium">Admin Overhead Eliminated Per Sprint Lead</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-3xl font-bold text-stone-900 mb-4">Core Competencies</h3>
+                <p class="text-stone-600 mb-6 leading-relaxed">
+                    This visualization maps my multidimensional skill set. My expertise bridges deep technical backend architecture with modern AI-assisted workflows and rapid, high-velocity full-stack delivery. Explore the chart to see the balance of skills that drive successful enterprise delivery.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl">👔</span>
+                        <div>
+                            <div class="font-semibold text-stone-800">Engineering Leadership</div>
+                            <div class="text-sm text-stone-500">Agile, Developer Productivity, Hiring, Mentorship</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl">🚀</span>
+                        <div>
+                            <div class="font-semibold text-stone-800">AI-Assisted Full-Stack Engineering</div>
+                            <div class="text-sm text-stone-500">Rapid Prototyping, Windsurf Cascade, React, Node.js</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl">⚙️</span>
+                        <div>
+                            <div class="font-semibold text-stone-800">Backend & Distributed Systems</div>
+                            <div class="text-sm text-stone-500">Java, Spring Boot, Microservices, RabbitMQ</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl">🏦</span>
+                        <div>
+                            <div class="font-semibold text-stone-800">FinTech Domain</div>
+                            <div class="text-sm text-stone-500">Lending, Underwriting, Fraud Detection, Compliance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-stone-100">
+                <div class="chart-container">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="innovations" class="bg-stone-800 text-stone-100 py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10 text-center max-w-3xl mx-auto">
+                <h3 class="text-3xl font-bold text-white mb-4">AI Innovations & Tooling</h3>
+                <p class="text-stone-400">
+                    This section details hands-on implementations of Generative AI to solve complex enterprise bottlenecks. Select a tab below to explore specific methodologies, architectures, and the resulting business impact of these initiatives.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 mb-8" id="tab-buttons">
+                <button onclick="switchTab('sdd')" id="btn-sdd" class="px-6 py-3 rounded-lg font-semibold transition-colors tab-active">Spec-Driven Dev (SDD)</button>
+                <button onclick="switchTab('hackathon')" id="btn-hackathon" class="px-6 py-3 rounded-lg font-semibold transition-colors tab-inactive">GenAI Hackathon Winner</button>
+                <button onclick="switchTab('sprint')" id="btn-sprint" class="px-6 py-3 rounded-lg font-semibold transition-colors tab-inactive">Sprint Manager App</button>
+            </div>
+
+            <div class="bg-stone-900 rounded-2xl p-8 border border-stone-700 min-h-[300px]">
+                
+                <div id="content-sdd" class="tab-content block animate-fade-in">
+                    <h4 class="text-2xl font-bold text-indigo-400 mb-4">Pioneering Spec-Driven Development (SDD)</h4>
+                    <p class="mb-6 text-stone-300 leading-relaxed">
+                        Designed and implemented a comprehensive 6-phase methodology for AI-assisted engineering using Windsurf Cascade. This workflow ensures that every feature begins with a durable, peer-reviewed specification before any AI-generated or human-written code is produced.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-stone-800 p-5 rounded-lg border border-stone-600">
+                            <div class="text-indigo-400 font-bold mb-2">Quality Gates</div>
+                            <p class="text-sm text-stone-400">Established tiered artifact requirements (T0–T3) and reviewer checklists to safely scale GenAI adoption.</p>
+                        </div>
+                        <div class="bg-stone-800 p-5 rounded-lg border border-stone-600">
+                            <div class="text-indigo-400 font-bold mb-2">Custom AI Tooling</div>
+                            <p class="text-sm text-stone-400">Authored reusable workflows, rules, and memory systems for AI coding agents to compound team productivity.</p>
+                        </div>
+                        <div class="bg-stone-800 p-5 rounded-lg border border-stone-600">
+                            <div class="text-indigo-400 font-bold mb-2">Security & Accountability</div>
+                            <p class="text-sm text-stone-400">Created anti-pattern guides preventing code quality degradation while maintaining human oversight.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-hackathon" class="tab-content hidden animate-fade-in">
+                    <h4 class="text-2xl font-bold text-indigo-400 mb-4">1st Place: 2026 ADF GenAI Hackathon</h4>
+                    <p class="mb-6 text-stone-300 leading-relaxed">
+                        Architected an AI-Automated Governance System to solve a high-stakes documentation workflow bottleneck. By automating the propagation of rule changes into complex documentation, we condensed a 6-hour manual process into a 30-minute interactive review.
+                    </p>
+                    <div class="bg-stone-800 p-6 rounded-lg border border-stone-600">
+                        <h5 class="font-bold text-white mb-3">Hybrid Architecture Implemented:</h5>
+                        <ul class="space-y-3 text-stone-400 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-indigo-400">➔</span> <strong>Deterministic Logic:</strong> Strict configuration mapping for high-confidence baseline results.</li>
+                            <li class="flex items-start gap-2"><span class="text-indigo-400">➔</span> <strong>LLM Refinement:</strong> OpenAI integration for semantic interpretation, contextual rewrites, and grouping logical changes.</li>
+                            <li class="flex items-start gap-2"><span class="text-indigo-400">➔</span> <strong>Full-Stack Execution:</strong> Flask API backend paired with a custom React & TypeScript frontend for a "human-in-the-loop" review.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="content-sprint" class="tab-content hidden animate-fade-in">
+                    <h4 class="text-2xl font-bold text-indigo-400 mb-4">Sprint Manager: Rapid Full-Stack Platform</h4>
+                    <p class="mb-6 text-stone-300 leading-relaxed">
+                        Identified a massive operational inefficiency where leads spent 5-7 hours per sprint manually calculating capacity and copying Jira data. Built a custom web app that plugs directly into Jira to automate the entire process.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-stone-800 p-5 rounded-lg border border-stone-600">
+                            <h5 class="font-bold text-white mb-2">The Build Process</h5>
+                            <p class="text-sm text-stone-400">Leveraged AI pair-programming (Windsurf) to independently architect, write, and ship 18,000+ lines of production code (React + Node.js) across 40 source files in under 50 hours outside of working hours, showcasing extreme full-stack velocity.</p>
+                        </div>
+                        <div class="bg-stone-800 p-5 rounded-lg border border-stone-600">
+                            <h5 class="font-bold text-white mb-2">Platform Features</h5>
+                            <ul class="text-sm text-stone-400 space-y-1">
+                                <li>• Auto-calculated team capacity</li>
+                                <li>• Live Kanban standup board</li>
+                                <li>• One-click sprint retrospectives</li>
+                                <li>• Atlassian OAuth & RBAC</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 text-center">
+            <h3 class="text-3xl font-bold text-stone-900 mb-4">Career Journey</h3>
+            <p class="text-stone-600">
+                An interactive timeline of my professional experience. Click on any role to expand and view specific technical achievements, architectural decisions, and leadership outcomes.
+            </p>
+        </div>
+
+        <div class="relative pl-6 border-l-2 border-stone-200 space-y-8">
+            
+            <div class="relative group cursor-pointer" onclick="toggleTimeline('exp1')">
+                <div class="timeline-dot group-hover:scale-125 transition-transform"></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200 hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                        <h4 class="text-xl font-bold text-stone-900">Engineering Manager</h4>
+                        <span class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-sm font-semibold">Nov 2021 – Present</span>
+                    </div>
+                    <div class="text-stone-600 font-medium mb-4">Applied Data Finance | Chennai, India (Remote)</div>
+                    <div class="text-sm text-indigo-600 font-medium mb-2">Click to expand/collapse details 🔽</div>
+                    
+                    <div id="exp1" class="hidden mt-4 space-y-3 text-stone-600 text-sm border-t border-stone-100 pt-4">
+                        <p>Lead a 15-member engineering organization delivering mission-critical financial and risk-scoring systems.</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>AI-Assisted Full-Stack:</strong> Self-trained on modern frontend tooling (React, Tailwind, Node.js) to partner with advanced AI copilots, accelerating prototyping and production tool deployment.</li>
+                            <li><strong>Underwriting & Risk:</strong> Integrated Experian’s Verify Income product, enabling real-time underwriting decisioning for high-volume loan applications.</li>
+                            <li><strong>Fraud Detection:</strong> Designed and implemented a standalone microservice for fraud detection, reducing system processing time by 15%.</li>
+                            <li><strong>Cost Optimization:</strong> Re-engineered the lead purchase workflow pipeline, optimizing system performance and reducing overall acquisition costs by 10%.</li>
+                            <li><strong>CI/CD:</strong> Migrated dependency management to Sonatype Nexus, drastically reducing build failures and inter-team conflicts.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer" onclick="toggleTimeline('exp2')">
+                <div class="timeline-dot group-hover:scale-125 transition-transform bg-stone-400"></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200 hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                        <h4 class="text-xl font-bold text-stone-900">Lead - Technology</h4>
+                        <span class="px-3 py-1 bg-stone-100 text-stone-700 rounded-full text-sm font-semibold">Sep 2020 – Nov 2021</span>
+                    </div>
+                    <div class="text-stone-600 font-medium mb-4">Synechron | Chennai, India (Remote)</div>
+                    <div class="text-sm text-stone-500 font-medium mb-2">Click to expand/collapse details 🔽</div>
+                    
+                    <div id="exp2" class="hidden mt-4 space-y-3 text-stone-600 text-sm border-t border-stone-100 pt-4">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Led backend engineering for financial services API platforms with a focus on high availability, scale, and performance.</li>
+                            <li>Optimized enterprise API performance through extensive performance tuning, caching strategies, and code refactoring.</li>
+                            <li>Mentored junior and mid-level engineers, collaborating directly with global product managers and enterprise banking clients to define technical roadmaps.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer" onclick="toggleTimeline('exp3')">
+                <div class="timeline-dot group-hover:scale-125 transition-transform bg-stone-400"></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200 hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                        <h4 class="text-xl font-bold text-stone-900">IT Analyst</h4>
+                        <span class="px-3 py-1 bg-stone-100 text-stone-700 rounded-full text-sm font-semibold">Dec 2012 – Sep 2020</span>
+                    </div>
+                    <div class="text-stone-600 font-medium mb-4">Tata Consultancy Services | Chennai, India / Antwerp, Belgium</div>
+                    <div class="text-sm text-stone-500 font-medium mb-2">Click to expand/collapse details 🔽</div>
+                    
+                    <div id="exp3" class="hidden mt-4 space-y-3 text-stone-600 text-sm border-t border-stone-100 pt-4">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Designed, developed, and maintained secure, highly scalable enterprise banking systems for global clients.</li>
+                            <li>Led the VISA card encryption compliance project, significantly improving the organization's security posture and meeting stringent regulatory requirements.</li>
+                            <li>Automated the platform regression suite using Selenium, improving testing productivity by 20% and reducing deployment bottlenecks.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 py-10 text-center border-t border-stone-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="mb-4">© 2026 Vivek Mecharla. Built as an Interactive Portfolio.</p>
+            <div class="flex justify-center gap-4 text-sm">
+                <span>B.E. Velammal Institute of Technology (CGPA: 8.75)</span>
+                <span>•</span>
+                <span>Certified ScrumMaster®</span>
+                <span>•</span>
+                <span>Oracle Certified Expert</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Engineering Leadership', 
+                    'Backend & Distributed Sys', 
+                    'AI-Assisted Full-Stack', 
+                    'FinTech Domain (Underwriting/Fraud)', 
+                    'Full-Stack / Cloud', 
+                    'CI/CD & Automation'
+                ],
+                datasets: [{
+                    label: 'Proficiency Level',
+                    data: [95, 90, 95, 90, 92, 85],
+                    backgroundColor: 'rgba(79, 70, 229, 0.2)',
+                    borderColor: 'rgba(79, 70, 229, 1)',
+                    pointBackgroundColor: 'rgba(79, 70, 229, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(79, 70, 229, 1)',
+                    borderWidth: 2,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                        grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                        pointLabels: {
+                            font: { family: 'Inter', size: 12, weight: '600' },
+                            color: '#44403c',
+                            callback: function(label) {
+                                if (label.length > 16) {
+                                    let words = label.split(' ');
+                                    let lines = [];
+                                    let currentLine = '';
+                                    words.forEach(word => {
+                                        if ((currentLine + word).length > 16) {
+                                            lines.push(currentLine.trim());
+                                            currentLine = word + ' ';
+                                        } else {
+                                            currentLine += word + ' ';
+                                        }
+                                    });
+                                    lines.push(currentLine.trim());
+                                    return lines;
+                                }
+                                return label;
+                            }
+                        },
+                        ticks: {
+                            display: false,
+                            min: 0,
+                            max: 100,
+                            stepSize: 20
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(28, 25, 23, 0.9)',
+                        titleFont: { family: 'Inter', size: 14 },
+                        bodyFont: { family: 'Inter', size: 13 },
+                        padding: 10,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                return 'Expertise level: ' + context.raw + '/100';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        function switchTab(tabId) {
+            const tabs = ['sdd', 'hackathon', 'sprint'];
+            
+            tabs.forEach(t => {
+                document.getElementById('content-' + t).classList.add('hidden');
+                document.getElementById('content-' + t).classList.remove('block');
+                
+                const btn = document.getElementById('btn-' + t);
+                btn.classList.remove('tab-active');
+                btn.classList.add('tab-inactive');
+            });
+
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+            document.getElementById('content-' + tabId).classList.add('block');
+            
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('tab-inactive');
+            activeBtn.classList.add('tab-active');
+        }
+
+        function toggleTimeline(expId) {
+            const el = document.getElementById(expId);
+            if(el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                el.classList.add('block', 'animate-fade-in');
+            } else {
+                el.classList.add('hidden');
+                el.classList.remove('block', 'animate-fade-in');
+            }
+        }
+    </script>
+</body>
+</html>
