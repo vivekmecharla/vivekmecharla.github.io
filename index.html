@@ -63,12 +63,12 @@
 
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="font-bold text-xl text-indigo-600 tracking-tight">VM.</div>
+            <div class="flex justify-end h-16 items-center">
                 <div class="hidden sm:flex space-x-8 text-sm font-medium text-stone-600">
                     <a href="#impact" class="hover:text-indigo-600 transition-colors">Impact</a>
                     <a href="#skills" class="hover:text-indigo-600 transition-colors">Competencies</a>
                     <a href="#innovations" class="hover:text-indigo-600 transition-colors">AI Innovations</a>
+                    <a href="#awards" class="hover:text-indigo-600 transition-colors">Awards</a>
                     <a href="#experience" class="hover:text-indigo-600 transition-colors">Experience</a>
                 </div>
             </div>
@@ -77,9 +77,6 @@
 
     <header class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-12">
         <div class="flex-1 space-y-6">
-            <div class="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-semibold tracking-wide">
-                🏆 Best Manager Award (H2 2025)
-            </div>
             <h1 class="text-4xl md:text-6xl font-bold text-stone-900 leading-tight">
                 Vivek Mecharla
             </h1>
@@ -144,33 +141,47 @@
                 <p class="text-stone-600 mb-6 leading-relaxed">
                     This visualization maps my multidimensional skill set. My expertise bridges deep technical backend architecture with modern AI-assisted workflows and rapid, high-velocity full-stack delivery. Explore the chart to see the balance of skills that drive successful enterprise delivery.
                 </p>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3">
                         <span class="text-xl">👔</span>
                         <div>
                             <div class="font-semibold text-stone-800">Engineering Leadership</div>
-                            <div class="text-sm text-stone-500">Agile, Developer Productivity, Hiring, Mentorship</div>
+                            <div class="text-sm text-stone-500">Agile, Dev Productivity, Team Mentorship, Hiring</div>
                         </div>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-start gap-3">
                         <span class="text-xl">🚀</span>
                         <div>
-                            <div class="font-semibold text-stone-800">AI-Assisted Full-Stack Engineering</div>
-                            <div class="text-sm text-stone-500">Rapid Prototyping, Windsurf Cascade, React, Node.js</div>
+                            <div class="font-semibold text-stone-800">AI-Assisted Full-Stack</div>
+                            <div class="text-sm text-stone-500">Windsurf, Cursor, React.js, Node.js, TS</div>
                         </div>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-start gap-3">
                         <span class="text-xl">⚙️</span>
                         <div>
-                            <div class="font-semibold text-stone-800">Backend & Distributed Systems</div>
-                            <div class="text-sm text-stone-500">Java, Spring Boot, Microservices, RabbitMQ</div>
+                            <div class="font-semibold text-stone-800">Backend Engineering</div>
+                            <div class="text-sm text-stone-500">Java, Spring Boot, Microservices, Python</div>
                         </div>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl">🏗️</span>
+                        <div>
+                            <div class="font-semibold text-stone-800">System Architecture</div>
+                            <div class="text-sm text-stone-500">Distributed Systems, System Design, RabbitMQ</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
                         <span class="text-xl">🏦</span>
                         <div>
                             <div class="font-semibold text-stone-800">FinTech Domain</div>
-                            <div class="text-sm text-stone-500">Lending, Underwriting, Fraud Detection, Compliance</div>
+                            <div class="text-sm text-stone-500">Lending, Underwriting, Fraud Engine, Compliance</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl">☁️</span>
+                        <div>
+                            <div class="font-semibold text-stone-800">Cloud & DevOps</div>
+                            <div class="text-sm text-stone-500">AWS (EC2, S3, RDS), CI/CD, Jenkins, GitHub Actions</div>
                         </div>
                     </div>
                 </div>
@@ -262,6 +273,117 @@
         </div>
     </section>
 
+    <section id="awards" class="bg-white py-20 border-y border-stone-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 text-center">
+                <h3 class="text-3xl font-bold text-stone-900 mb-4">Achievements & Awards</h3>
+                <p class="text-stone-600 max-w-2xl mx-auto">
+                    Recognitions for driving engineering excellence, innovative hackathons, and fostering high-performing team cultures.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="awards-grid">
+                
+                <!-- TOP 4 AWARDS (Always Visible) -->
+                <div class="flex items-start gap-4 p-6 bg-stone-50 rounded-xl border border-stone-100">
+                    <div class="text-4xl">🏆</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-stone-900">Best Manager Award (H2 2025)</h4>
+                        <div class="text-sm text-indigo-600 font-medium mb-2">Applied Data Finance • Feb 2026</div>
+                        <p class="text-sm text-stone-600">Recognized for operational excellence, fostering team growth, and successfully delivering high-impact engineering and AI-driven solutions.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-stone-50 rounded-xl border border-stone-100">
+                    <div class="text-4xl">🥇</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-stone-900">1st Place: ADF GenAI Hackathon</h4>
+                        <div class="text-sm text-indigo-600 font-medium mb-2">Applied Data Finance • 2026</div>
+                        <p class="text-sm text-stone-600">Won first prize for architecting an AI-Automated Governance System that reduced manual documentation reviews by 90% using a hybrid LLM architecture.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-stone-50 rounded-xl border border-stone-100">
+                    <div class="text-4xl">⭐</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-stone-900">Star Award</h4>
+                        <div class="text-sm text-indigo-600 font-medium mb-2">Synechron Technologies • Jan 2021</div>
+                        <p class="text-sm text-stone-600">Awarded for exceptional performance in optimizing enterprise API platforms and leading backend engineering initiatives.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-stone-50 rounded-xl border border-stone-100">
+                    <div class="text-4xl">😊</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-stone-900">(S)miles Award</h4>
+                        <div class="text-sm text-indigo-600 font-medium mb-2">Tata Consultancy Services • Mar 2019</div>
+                        <p class="text-sm text-stone-600">Beyond Performance Awards recognition for consistent delivery and driving critical compliance projects.</p>
+                    </div>
+                </div>
+
+                <!-- EXTRA AWARDS (Hidden by Default) -->
+                <div class="extra-award hidden items-start gap-4 p-6 bg-stone-50 rounded-xl border border-stone-100 animate-fade-in">
+                    <div class="text-4xl">🏅</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-stone-900">Service & Commitment Award</h4>
+                        <div class="text-sm text-indigo-600 font-medium mb-2">Tata Consultancy Services • Dec 2017</div>
+                    </div>
+                </div>
+                <div class="extra-award hidden items-start gap-4 p-6 bg-stone-50 rounded-xl border border-stone-100 animate-fade-in">
+                    <div class="text-4xl">🌟</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-stone-900">Star of the Month</h4>
+                        <div class="text-sm text-indigo-600 font-medium mb-2">Tata Consultancy Services • Apr 2017</div>
+                        <p class="text-sm text-stone-600">Awards for Excellence</p>
+                    </div>
+                </div>
+                <div class="extra-award hidden items-start gap-4 p-6 bg-stone-50 rounded-xl border border-stone-100 animate-fade-in">
+                    <div class="text-4xl">🏅</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-stone-900">Service & Commitment Award</h4>
+                        <div class="text-sm text-indigo-600 font-medium mb-2">Tata Consultancy Services • Dec 2015</div>
+                    </div>
+                </div>
+                <div class="extra-award hidden items-start gap-4 p-6 bg-stone-50 rounded-xl border border-stone-100 animate-fade-in">
+                    <div class="text-4xl">🎯</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-stone-900">On The Spot Award</h4>
+                        <div class="text-sm text-indigo-600 font-medium mb-2">Tata Consultancy Services • Oct 2015</div>
+                        <p class="text-sm text-stone-600">Awards for Excellence</p>
+                    </div>
+                </div>
+                <div class="extra-award hidden items-start gap-4 p-6 bg-stone-50 rounded-xl border border-stone-100 animate-fade-in">
+                    <div class="text-4xl">🤝</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-stone-900">Best Team</h4>
+                        <div class="text-sm text-indigo-600 font-medium mb-2">Tata Consultancy Services • Apr 2015</div>
+                        <p class="text-sm text-stone-600">Awards for Excellence (Star Awards)</p>
+                    </div>
+                </div>
+                <div class="extra-award hidden items-start gap-4 p-6 bg-stone-50 rounded-xl border border-stone-100 animate-fade-in">
+                    <div class="text-4xl">🎯</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-stone-900">On The Spot Award</h4>
+                        <div class="text-sm text-indigo-600 font-medium mb-2">Tata Consultancy Services • Sep 2013</div>
+                        <p class="text-sm text-stone-600">Awards for Excellence</p>
+                    </div>
+                </div>
+                <div class="extra-award hidden items-start gap-4 p-6 bg-stone-50 rounded-xl border border-stone-100 animate-fade-in">
+                    <div class="text-4xl">🎓</div>
+                    <div>
+                        <h4 class="font-bold text-lg text-stone-900">ILP Kudos</h4>
+                        <div class="text-sm text-indigo-600 font-medium mb-2">Tata Consultancy Services • Apr 2013</div>
+                        <p class="text-sm text-stone-600">Learning Awards</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-10 text-center">
+                <button id="toggle-awards-btn" onclick="toggleAwards()" class="px-6 py-3 bg-white border border-stone-300 hover:bg-stone-50 text-stone-700 rounded-lg font-semibold transition-colors shadow-sm">
+                    Show All Awards ⬇️
+                </button>
+            </div>
+
+        </div>
+    </section>
+
     <section id="experience" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-12 text-center">
             <h3 class="text-3xl font-bold text-stone-900 mb-4">Career Journey</h3>
@@ -276,21 +398,29 @@
                 <div class="timeline-dot group-hover:scale-125 transition-transform"></div>
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200 hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
-                        <h4 class="text-xl font-bold text-stone-900">Engineering Manager</h4>
+                        <h4 class="text-xl font-bold text-stone-900">Engineering Manager & Lead</h4>
                         <span class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-sm font-semibold">Nov 2021 – Present</span>
                     </div>
                     <div class="text-stone-600 font-medium mb-4">Applied Data Finance | Chennai, India (Remote)</div>
                     <div class="text-sm text-indigo-600 font-medium mb-2">Click to expand/collapse details 🔽</div>
                     
-                    <div id="exp1" class="hidden mt-4 space-y-3 text-stone-600 text-sm border-t border-stone-100 pt-4">
-                        <p>Lead a 15-member engineering organization delivering mission-critical financial and risk-scoring systems.</p>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li><strong>AI-Assisted Full-Stack:</strong> Self-trained on modern frontend tooling (React, Tailwind, Node.js) to partner with advanced AI copilots, accelerating prototyping and production tool deployment.</li>
-                            <li><strong>Underwriting & Risk:</strong> Integrated Experian’s Verify Income product, enabling real-time underwriting decisioning for high-volume loan applications.</li>
-                            <li><strong>Fraud Detection:</strong> Designed and implemented a standalone microservice for fraud detection, reducing system processing time by 15%.</li>
-                            <li><strong>Cost Optimization:</strong> Re-engineered the lead purchase workflow pipeline, optimizing system performance and reducing overall acquisition costs by 10%.</li>
-                            <li><strong>CI/CD:</strong> Migrated dependency management to Sonatype Nexus, drastically reducing build failures and inter-team conflicts.</li>
-                        </ul>
+                    <div id="exp1" class="hidden mt-4 space-y-4 text-stone-600 text-sm border-t border-stone-100 pt-4">
+                        <div>
+                            <div class="font-bold text-stone-800 mb-2">Engineering Manager (Apr 2024 - Present)</div>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Leadership & Architecture:</strong> Lead a 10-15 member cross-functional engineering team across lending, risk scoring, underwriting, and fraud domains. Own engineering architecture decisions, technical standards, and system reliability. Established hiring pipelines, onboarding playbooks, and performance review frameworks from scratch.</li>
+                                <li><strong>AI-Assisted Full-Stack:</strong> Drove team-wide adoption of AI copilots (Windsurf), measurably improving productivity. Self-trained to build "Sprint Manager"—a full-stack internal tool (React + Node.js + Jira API) automating sprint planning, capacity, and metrics, saving 5–7 hours per sprint cycle per team lead. Improved overall sprint predictability.</li>
+                                <li><strong>Underwriting & Risk:</strong> Delivered Plaid Integration and Experian’s Verify Income product, connecting third-party financial data into decisioning for stronger, real-time loan approvals. Built Early Warning System (EWS) to enable business users to update risk cutoffs without engineering support, eliminating a 2-day code-test-deploy cycle.</li>
+                                <li><strong>Fraud Detection:</strong> Built Fraud Scorecard and a standalone microservice for real-time fraud configuration updates, enabling instant business response to attacks and reducing system processing time by 15%.</li>
+                                <li><strong>Cost Optimization & CI/CD:</strong> Re-engineered the lead purchase workflow pipeline, reducing overall acquisition costs by 10%. Migrated dependency management to Sonatype Nexus, eliminating build failures and inter-team conflicts.</li>
+                            </ul>
+                        </div>
+                        <div class="border-t border-stone-100 pt-3">
+                            <div class="font-bold text-stone-800 mb-2">Engineering Lead (Nov 2021 - Apr 2024)</div>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Workflow Optimization:</strong> Delivered Affiliate Workflow Merge—simplifying the onboarding of new affiliate partners by risk-based grouping and streamlining a major source of business volume.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -302,14 +432,15 @@
                         <h4 class="text-xl font-bold text-stone-900">Lead - Technology</h4>
                         <span class="px-3 py-1 bg-stone-100 text-stone-700 rounded-full text-sm font-semibold">Sep 2020 – Nov 2021</span>
                     </div>
-                    <div class="text-stone-600 font-medium mb-4">Synechron | Chennai, India (Remote)</div>
+                    <div class="text-stone-600 font-medium mb-4">Synechron | Chennai, India</div>
                     <div class="text-sm text-stone-500 font-medium mb-2">Click to expand/collapse details 🔽</div>
                     
                     <div id="exp2" class="hidden mt-4 space-y-3 text-stone-600 text-sm border-t border-stone-100 pt-4">
                         <ul class="list-disc pl-5 space-y-2">
-                            <li>Led backend engineering for financial services API platforms with a focus on high availability, scale, and performance.</li>
-                            <li>Optimized enterprise API performance through extensive performance tuning, caching strategies, and code refactoring.</li>
-                            <li>Mentored junior and mid-level engineers, collaborating directly with global product managers and enterprise banking clients to define technical roadmaps.</li>
+                            <li><strong>API & Backend Development:</strong> Led backend engineering for financial services API platforms. Developed backend APIs for an Fx Trade application and built message consumers to process back-feed messages from queues.</li>
+                            <li><strong>Performance & Quality:</strong> Optimized enterprise API performance through tuning, caching, and refactoring. Improved code coverage by writing JUnit test cases and debugged/fixed legacy frontend issues.</li>
+                            <li><strong>Client Solutions & Architecture:</strong> Developed POCs for new projects to serve client needs. Analyzed, estimated, and provided technical designs based on strict enterprise requirements.</li>
+                            <li><strong>Leadership:</strong> Mentored engineers, reviewed code to improve performance, and collaborated directly with global PMs in a team-based, agile environment to accomplish core objectives by deadlines.</li>
                         </ul>
                     </div>
                 </div>
@@ -319,17 +450,19 @@
                 <div class="timeline-dot group-hover:scale-125 transition-transform bg-stone-400"></div>
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200 hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
-                        <h4 class="text-xl font-bold text-stone-900">IT Analyst</h4>
+                        <h4 class="text-xl font-bold text-stone-900">System Analyst / Technical Lead</h4>
                         <span class="px-3 py-1 bg-stone-100 text-stone-700 rounded-full text-sm font-semibold">Dec 2012 – Sep 2020</span>
                     </div>
-                    <div class="text-stone-600 font-medium mb-4">Tata Consultancy Services | Chennai, India / Antwerp, Belgium</div>
+                    <div class="text-stone-600 font-medium mb-4">Tata Consultancy Services | Chennai, India & Antwerp, Belgium</div>
                     <div class="text-sm text-stone-500 font-medium mb-2">Click to expand/collapse details 🔽</div>
                     
                     <div id="exp3" class="hidden mt-4 space-y-3 text-stone-600 text-sm border-t border-stone-100 pt-4">
+                        <p class="mb-2">Progressed through multiple technical roles (Trainee, Developer, Tech Lead, System Analyst) operating across India and Antwerp over nearly 8 years.</p>
                         <ul class="list-disc pl-5 space-y-2">
-                            <li>Designed, developed, and maintained secure, highly scalable enterprise banking systems for global clients.</li>
-                            <li>Led the VISA card encryption compliance project, significantly improving the organization's security posture and meeting stringent regulatory requirements.</li>
-                            <li>Automated the platform regression suite using Selenium, improving testing productivity by 20% and reducing deployment bottlenecks.</li>
+                            <li><strong>Enterprise Banking Systems:</strong> Designed and developed secure web services to create documents through PSII. Maintained middleware for a digital investment advice tool and developed Spring Batch applications for quarterly reporting.</li>
+                            <li><strong>Compliance & Security:</strong> Led the VISA card encryption and decryption compliance project, significantly improving security posture. Created complex business events and data flows to ensure compliance with GDPR regulations.</li>
+                            <li><strong>Testing & QA Automation:</strong> Automated the platform regression suite using Selenium (including Test Data Automation), improving testing productivity by 20% and reducing deployment bottlenecks. Developed LoadRunner scripts and conducted extensive performance and capacity testing.</li>
+                            <li><strong>System Integration & Legacy:</strong> Analyzed, estimated, and developed backend architecture utilizing Java proprietary frameworks. Developed and maintained code for legacy backend systems based on Mainframes (COBOL, JCL).</li>
                         </ul>
                     </div>
                 </div>
@@ -358,15 +491,15 @@
             data: {
                 labels: [
                     'Engineering Leadership', 
-                    'Backend & Distributed Sys', 
+                    'Backend Engineering', 
+                    'System Architecture', 
                     'AI-Assisted Full-Stack', 
-                    'FinTech Domain (Underwriting/Fraud)', 
-                    'Full-Stack / Cloud', 
-                    'CI/CD & Automation'
+                    'FinTech Domain', 
+                    'Cloud & DevOps'
                 ],
                 datasets: [{
                     label: 'Proficiency Level',
-                    data: [95, 90, 95, 90, 92, 85],
+                    data: [95, 95, 90, 95, 90, 85],
                     backgroundColor: 'rgba(79, 70, 229, 0.2)',
                     borderColor: 'rgba(79, 70, 229, 1)',
                     pointBackgroundColor: 'rgba(79, 70, 229, 1)',
@@ -459,6 +592,30 @@
             } else {
                 el.classList.add('hidden');
                 el.classList.remove('block', 'animate-fade-in');
+            }
+        }
+
+        function toggleAwards() {
+            const extraAwards = document.querySelectorAll('.extra-award');
+            const btn = document.getElementById('toggle-awards-btn');
+            let isHidden = false;
+
+            extraAwards.forEach(award => {
+                if (award.classList.contains('hidden')) {
+                    award.classList.remove('hidden');
+                    award.classList.add('flex');
+                    isHidden = false;
+                } else {
+                    award.classList.add('hidden');
+                    award.classList.remove('flex');
+                    isHidden = true;
+                }
+            });
+
+            if (isHidden) {
+                btn.innerHTML = 'Show All Awards ⬇️';
+            } else {
+                btn.innerHTML = 'Show Less ⬆️';
             }
         }
     </script>
